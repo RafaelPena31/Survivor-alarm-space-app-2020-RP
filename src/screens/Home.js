@@ -8,16 +8,17 @@
 
 import React from 'react'
 import { SafeAreaView, Text, StatusBar } from 'react-native'
+import InputText from '../components/InputText/InputText'
 
-const App = () => {
+const Home = () => {
   return (
     <>
-      <StatusBar barStyle='dark-content' />
       <SafeAreaView>
-        <Text>FOI</Text>
+        <Text>Home</Text>
+        <InputText placeHolderText="Placeholder" maxLength={20}/>
       </SafeAreaView>
     </>
   )
 }
 
-export default App
+export default Home
