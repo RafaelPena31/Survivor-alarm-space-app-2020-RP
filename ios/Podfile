@@ -10,6 +10,8 @@ target 'survivorAlarm' do
 
   pod 'react-native-onesignal', :path => '../node_modules/react-native-onesignal'
 
+  pod 'RNCPicker', :path => '../node_modules/@react-native-community/picker'
+
   target 'survivorAlarmTests' do
     inherit! :complete
     # Pods for testing

@@ -1,24 +1,26 @@
-import { StyleSheet } from 'react-native'
+import { Dimensions, StyleSheet } from 'react-native'
+
+const { width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   safeAreaView: {
-    justifyContent: 'flex-end',
+    width: width,
+    height: '100%',
     backgroundColor: '#000',
-    height: '100%'
+    justifyContent: 'space-between',
+    paddingVertical: 30
   },
-  astroIcon: {
-    marginTop: 50,
-    marginBottom: 50,
+  iconContainer: {
+    alignItems: 'center',
+    marginTop: 35,
+    marginBottom: 70
+  },
+  title: {
     color: '#fff',
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  astro: {
-    marginBottom: 20,
-    flexShrink: 0
-  },
-  scrollView: {
-    height: '100%'
+    fontSize: 35,
+    fontFamily: 'Roboto-Bold',
+    marginTop: 30
   }
 })
+
+export default styles

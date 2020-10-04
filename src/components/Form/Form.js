@@ -2,6 +2,7 @@ import React from 'react'
 import { View, StyleSheet } from 'react-native'
 import { Formik } from 'formik'
 
+// eslint-disable-next-line react/prop-types
 const Form = ({ children }) => {
   const data = {
     name: '',
@@ -22,16 +23,9 @@ const Form = ({ children }) => {
 
 const styles = StyleSheet.create({
   form: {
-    marginTop: 100,
     justifyContent: 'center',
-    backgroundColor: '#7200bf',
-    //height: '85%',
     width: '100%',
-    padding: 20,
-    borderTopRightRadius: 28,
-    borderTopLeftRadius: 28
+    padding: 20
   }
 })
-
 export default Form
-
