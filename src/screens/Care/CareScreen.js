@@ -37,6 +37,10 @@ const CareScreen = () => {
             <Text style={styles.dataUserText}>20</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
+            <Text style={styles.dataUserText}>Gender</Text>
+            <Text style={styles.dataUserText}>Male</Text>
+          </View>
+          <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Weight</Text>
             <Text style={styles.dataUserText}>165,35 lbs</Text>
           </View>
@@ -47,6 +51,10 @@ const CareScreen = () => {
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Body Mass Index</Text>
             <Text style={styles.dataUserText}>23.7 (normal weight)</Text>
+          </View>
+          <View style={styles.dataUserContainerOne}>
+            <Text style={styles.dataUserText}>Basal Metabolic Rate</Text>
+            <Text style={styles.dataUserText}>1,761 Calories/day</Text>
           </View>
         </View>
       </ScrollView>

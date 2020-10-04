@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native'
-import React from 'react'
+import React, { useState } from 'react'
 import { View, Text, SafeAreaView, TouchableOpacity } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import * as Progress from 'react-native-progress'
@@ -11,7 +11,67 @@ import colors from '../../Styles/_colors'
 
 // eslint-disable-next-line react/prop-types
 const StatusScreen = () => {
+  const [weight, setWeight] = useState()
+  const [age, setAge] = useState()
+  const [height, setHeight] = useState()
+  const [gender, setGender] = useState()
+  const [bmr, setBmr] = useState(0)
+
   const navigation = useNavigation()
+
+  function pointGrape(exercies, studies, maintenance) {
+    let point
+    let preferedHourSleep = 8
+    let sleep
+    let day = 24
+    let waterIntake
+
+    if (exercies + studies + maintenance <= day - preferedHourSleep) {
+      day = 16
+    } else {
+      sleep = day - (exercies + studies + maintenance)
+    }
+
+    function points() {
+      while (exercies > 0) {
+        exercies--
+        point += 2
+      }
+
+      while (studies > 0) {
+        studies--
+        point += 1
+      }
+
+      while (maintenance > 0) {
+        maintenance--
+        point += 3
+      }
+    }
+
+    gender == 'Feminino' ? womanBazalCalc() : menBazalCalc()
+
+    function womanBazalCalc() {
+      setBmr(655.7 + 13.75 * weight + 5.003 * height - 6.755 * age)
+    }
+
+    function menBazalCalc() {
+      setBmr(66.47 + 13.75 * weight + 5.003 * height - 6.755 * age)
+    }
+
+    points()
+
+    while (point > 0) {
+      waterIntake += 150
+      setBmr(bmr + 50)
+      point--
+    }
+
+    waterIntake < 2000 &&
+      (() => {
+        waterIntake = 2000
+      })()
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -85,3 +145,11 @@ const StatusScreen = () => {
 }
 
 export default StatusScreen
+
+/* 
+  routines
+
+  exercices   -> 2
+  studies     -> 1
+  maintenance -> 3
+*/

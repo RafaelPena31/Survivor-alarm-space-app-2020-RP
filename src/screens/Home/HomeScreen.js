@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Image, SafeAreaView, Text, View } from 'react-native'
 import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import Icon from 'react-native-vector-icons/FontAwesome'
@@ -10,7 +10,15 @@ import LinearGradient from 'react-native-linear-gradient'
 import colors from '../../Styles/_colors'
 
 const HomeScreen = () => {
+  const [isLogged, setIsLogged] = useState(false)
+
   const navigation = useNavigation()
+
+  useEffect(() => {
+    if (isLogged) {
+      navigation.navigate('Status')
+    }
+  }, [])
 
   return (
     <SafeAreaView style={styles.homeContainer}>

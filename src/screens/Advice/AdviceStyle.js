@@ -3,12 +3,12 @@ import colors from '../../Styles/_colors'
 
 const styles = StyleSheet.create({
   scrollView: {
-    height: '100%',
+    height: '100%'
   },
   content: {
     alignItems: 'center',
     paddingHorizontal: 20,
-    marginBottom: 30,
+    marginBottom: 30
   },
   divider: {
     borderWidth: 1,
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     marginBottom: 5,
     marginTop: 30,
     textAlign: 'left',
-    width: '100%',
+    width: '100%'
   },
   paragraph: {
     fontFamily: 'Roboto-Bold',
@@ -37,8 +37,12 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingLeft: 30,
     textAlign: 'left',
-    width: '100%',
+    width: '100%'
   },
+  focusText: {
+    fontFamily: 'Poppins-Bold',
+    color: '#7200bf'
+  }
 })
 
 export default styles
