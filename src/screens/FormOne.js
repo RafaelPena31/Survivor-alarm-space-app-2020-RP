@@ -4,8 +4,29 @@ import { SafeAreaView, StyleSheet, View, ScrollView } from 'react-native'
 import Form from '../components/Form/Form'
 import InputText from '../components/InputText/InputText'
 import Btn from '../components/Btn/Btn'
+//import NotificationManager from '../components/NotificationManager/NotificationManager'
 
-const FormOne = ({ navigation }) => {
+//const localNotify = new NotificationManager()
+
+const FormOne = ({ navigation }) => { 
+/*   useEffect(() => {
+    localNotify.configure(
+      token => console.log('[Notification] Registered: ', token),
+      notify => console.log('[Notification] onNotification: ', notify),
+      notify => console.log('[Notification] onOpenNotification:', notify)
+    )
+  }, [])
+
+  const onPressSendNotification = () => {
+    const options = {
+      soundName: 'default',
+      playSound: true,
+      vibrate: true
+    }
+
+    localNotify.showNotification(1, 'App Notification', 'Local Notification', {}, options) */
+  //}
+
   return (
     <>
       <SafeAreaView style={styles.safeAreaView}>
@@ -18,15 +39,19 @@ const FormOne = ({ navigation }) => {
             <InputText placeHolderText='Height' maxLength={100} />
             <InputText placeHolderText='Weight' maxLength={100} />
             <Btn title='Next' onPress={() => navigation.navigate('FormTwo')} />
+            {/* <Btn
+              title='Josias'
+              onPress={() => {
+                onPressSendNotification()
+              }} 
+            />
+              */}
           </Form>
         </ScrollView>
       </SafeAreaView>
     </>
   )
 }
-
-export default FormOne
-
 const styles = StyleSheet.create({
   safeAreaView: {
     justifyContent: 'flex-end',
@@ -49,3 +74,6 @@ const styles = StyleSheet.create({
     height: '100%'
   }
 })
+
+export default FormOne
+
