@@ -12,7 +12,7 @@ const CareScreen = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <ScrollView>
+      <ScrollView style={styles.scroll}>
         <LinearGradient colors={[colors.principal, colors.secondaryDark, colors.complementaryDark]} style={styles.careContainer}>
           <View style={styles.iconContainer}>
             <Icon name='user-astronaut' size={130} color='#fff' />
@@ -21,6 +21,13 @@ const CareScreen = () => {
         </LinearGradient>
         <View style={styles.content}>
           <Text style={styles.titleProfile}>Profile</Text>
+          <View style={styles.divider}></View>
+        </View>
+        <View style={styles.generalContainer}>
+          <View style={styles.dataUserContainerOne}>
+            <Text style={styles.dataUserText}>f</Text>
+            <Text style={styles.dataUserText}>f</Text>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>

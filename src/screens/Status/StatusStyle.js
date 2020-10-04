@@ -1,13 +1,10 @@
 import { Dimensions, StyleSheet } from 'react-native'
 import colors from '../../Styles/_colors'
 
-const { width, height } = Dimensions.get('window')
+const { width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
-  statusContainer: {
-    width: width,
-    height: height
-  },
+  statusContainer: {},
   trianguloContainer: {
     alignItems: 'baseline',
     marginBottom: 35

@@ -1,11 +1,8 @@
-import { Dimensions, StyleSheet } from 'react-native'
-
-const { width } = Dimensions.get('window')
+import { StyleSheet } from 'react-native'
 
 const styles = StyleSheet.create({
   safeAreaView: {
-    flex: 1,
-    width: width
+    flex: 1
   },
   iconContainer: {
     alignItems: 'center',

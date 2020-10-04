@@ -1,10 +1,8 @@
-import { Dimensions, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import colors from '../../Styles/_colors'
-const { width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   careContainer: {
-    width: width,
     justifyContent: 'space-between',
     paddingVertical: 30,
     borderBottomLeftRadius: 40,
@@ -30,6 +28,18 @@ const styles = StyleSheet.create({
     fontSize: 35,
     color: colors.complementaryDark,
     marginBottom: 30
+  },
+  divider: {
+    borderWidth: 1,
+    borderColor: colors.secondaryDark,
+    width: 370
+  },
+  generalContainer: {
+    paddingHorizontal: 20
+  },
+  dataUserContainerOne: {
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   }
 })
 

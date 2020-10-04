@@ -1,7 +1,5 @@
-import { Dimensions, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import colors from '../../Styles/_colors'
-
-const { width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   homeContainer: {
@@ -16,7 +14,7 @@ const styles = StyleSheet.create({
     padding: 15
   },
   title: {
-    width: width,
+    width: '100%',
     alignItems: 'flex-start',
     color: '#fff',
     fontSize: 40,
