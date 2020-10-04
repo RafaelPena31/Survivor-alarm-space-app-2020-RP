@@ -43,11 +43,11 @@ const CareScreen = () => {
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Weight</Text>
-            <Text style={styles.dataUserText}>165,35 lbs</Text>
+            <Text style={styles.dataUserText}>75kg</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Height</Text>
-            <Text style={styles.dataUserText}>5&#39;10</Text>
+            <Text style={styles.dataUserText}>177cm</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Body Mass Index</Text>
