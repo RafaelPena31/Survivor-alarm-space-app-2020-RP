@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native'
+import colors from '../../Styles/_colors'
 const { width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
@@ -17,12 +18,18 @@ const styles = StyleSheet.create({
   title: {
     color: '#fff',
     fontSize: 35,
-    fontFamily: 'Roboto-Bold',
+    fontFamily: 'Montserrat-Bold',
     marginTop: 30
   },
   content: {
     alignItems: 'center',
     padding: 20
+  },
+  titleProfile: {
+    fontFamily: 'Roboto-Bold',
+    fontSize: 35,
+    color: colors.complementaryDark,
+    marginBottom: 30
   }
 })
 
