@@ -191,9 +191,9 @@ const FormTwoScreen = () => {
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                  style={[styles.touchableItem, touchableColor1 ? styles.selectedItem : {}]}
+                  style={[styles.touchableItem, touchableColor4 ? styles.selectedItem : {}]}
                   onPress={() => {
-                    setTouchableColor1(!touchableColor1)
+                    setTouchableColor4(!touchableColor4)
                   }}>
                   <Text style={[styles.headerText, touchableColor4 ? styles.greenHeaderText : styles.blackHeaderText]}>Exercises</Text>
                   <Icon name='dumbbell' size={86} style={[styles.image, touchableColor4 ? styles.selectedIcon : styles.unselectedIcon]} />

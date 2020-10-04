@@ -11,7 +11,6 @@ import buttonStyles from '../../Styles/ButtonStyles/ButtonStyles'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import LinearGradient from 'react-native-linear-gradient'
 import colors from '../../Styles/_colors'
-import { set } from 'react-native-reanimated'
 
 const FormOneScreen = () => {
   const navigation = useNavigation()
@@ -41,8 +40,11 @@ const FormOneScreen = () => {
             <TouchableOpacity
               style={buttonStyles.submit}
               onPress={() => {
-                const res = [weight, age, height, gender, name].find(v => v.length === 0)
-                res ? alert('Invalid') : navigation.navigate('FormTwo')
+                const fields = [weight, age, height, gender, name]
+                const find = fields.find(v => v.length === 0)
+                typeof find !== 'undefined' && find.length === 0 ?
+                  alert('One or more fields haven\'t been filled') :
+                  navigation.navigate('FormTwo')
               }}>
               <Text style={buttonStyles.textSubmit}>Next</Text>
             </TouchableOpacity>
