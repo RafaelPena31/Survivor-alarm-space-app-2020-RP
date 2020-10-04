@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
   trianguloContainer: {
     alignItems: 'baseline',
-    marginBottom: 10
+    marginBottom: 35
   },
   trianguloCima: {
     width: 0,
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     borderRightWidth: width,
     borderRightColor: 'transparent',
     borderTopWidth: width,
-    borderTopColor: colors.complementary,
+    borderTopColor: colors.complementarySemiDark,
     margin: 0
   },
   superiorContainer: {

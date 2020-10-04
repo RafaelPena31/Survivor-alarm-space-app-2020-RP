@@ -4,6 +4,7 @@ const colors = {
   secondaryDark: '#000000',
   complementary: '#7200bf',
   complementaryDark: '#260040',
+  complementarySemiDark: '#6000E3',
   complementaryLight: '#913DCA',
   /* ================================== */
   textSecondary: '#C0C0C0'

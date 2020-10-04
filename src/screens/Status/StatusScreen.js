@@ -38,7 +38,7 @@ const StatusScreen = () => {
 
           <View style={styles.inferiorContainer}>
             <View style={styles.iconContainer}>
-              <Icon name='user-astronaut' size={80} color='#fff' />
+              <Icon name='book-reader' size={80} color='#fff' />
             </View>
             <View style={styles.textAdviceContainer}>
               <Text style={styles.nameAdviceText}>Survivor - Advices</Text>

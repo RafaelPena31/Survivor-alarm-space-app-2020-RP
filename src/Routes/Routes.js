@@ -1,11 +1,11 @@
 import React from 'react'
 import FormOneScreen from '../screens/FormOne/FormOneScreen'
 import FormTwoScreen from '../screens/FormTwo/FormTwoScreen'
-import StatusScreen from '../screens/Status/StatusScreen'
 import AdviceScreen from '../screens/Advice/AdviceScreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack'
 import HomeScreen from '../screens/Home/HomeScreen'
+import TabRoute from './TabRoute'
 
 const Stack = createStackNavigator()
 
@@ -57,7 +57,7 @@ const Routes = () => {
         />
         <Stack.Screen
           name='Status'
-          component={StatusScreen}
+          component={TabRoute}
           options={{
             transitionSpec: {
               open: config,

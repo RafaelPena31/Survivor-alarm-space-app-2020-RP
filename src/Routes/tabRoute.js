@@ -3,10 +3,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/Fontisto'
 import colors from '../Styles/_colors'
 import StatusScreen from '../screens/Status/StatusScreen'
+import CareScreen from '../screens/Care/CareScreen'
 
 const { Navigator, Screen } = createBottomTabNavigator()
 
-function StudyTabs() {
+function TabRoute() {
   return (
     <Navigator
       tabBarOptions={{
@@ -36,24 +37,24 @@ function StudyTabs() {
         activeTintColor: '#32264d'
       }}>
       <Screen
-        name='TeacherList'
+        name='Status'
         component={StatusScreen}
         options={{
           tabBarLabel: 'Status',
           // eslint-disable-next-line react/display-name
           tabBarIcon: ({ size, focused }) => {
-            return <Icon name='area-chart' size={size} color={focused ? colors.complementaryLight : colors.complementaryDark} />
+            return <Icon name='area-chart' size={size} color={focused ? colors.complementarySemiDark : colors.complementaryDark} />
           }
         }}
       />
       <Screen
-        name='TeacherList'
-        component={StatusScreen}
+        name='Care'
+        component={CareScreen}
         options={{
-          tabBarLabel: 'Survive',
+          tabBarLabel: 'Your cares',
           // eslint-disable-next-line react/display-name
           tabBarIcon: ({ size, focused }) => {
-            return <Icon name='heartbeat-alt' size={size} color={focused ? colors.complementaryLight : colors.complementaryDark} />
+            return <Icon name='heartbeat-alt' size={size} color={focused ? colors.complementarySemiDark : colors.complementaryDark} />
           }
         }}
       />
@@ -61,4 +62,4 @@ function StudyTabs() {
   )
 }
 
-export default StudyTabs
+export default TabRoute
