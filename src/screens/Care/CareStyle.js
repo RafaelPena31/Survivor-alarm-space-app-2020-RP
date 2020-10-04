@@ -27,7 +27,8 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto-Bold',
     fontSize: 35,
     color: colors.complementaryDark,
-    marginBottom: 30
+    marginBottom: 30,
+    textAlign: 'center'
   },
   divider: {
     borderWidth: 1,
@@ -40,7 +41,29 @@ const styles = StyleSheet.create({
   dataUserContainerOne: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    paddingVertical: 5,
+    paddingVertical: 5
+  },
+  touchableItem: {
+    backgroundColor: '#fff',
+    width: 170,
+    height: 180,
+    borderRadius: 8,
+    paddingHorizontal: 20,
+    marginBottom: 20,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  headerText: {
+    fontSize: 20,
+    fontWeight: '700',
+    textAlign: 'center'
+  },
+  image: {
+    width: 100,
+    height: 100,
+    margin: 15,
+    alignSelf: 'center'
   }
 })
 

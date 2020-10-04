@@ -42,6 +42,11 @@ const styles = StyleSheet.create({
   focusText: {
     fontFamily: 'Poppins-Bold',
     color: '#7200bf'
+  },
+  image: {
+    width: 480,
+    resizeMode: 'contain',
+    transform: [{ rotate: '90deg' }]
   }
 })
 

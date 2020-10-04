@@ -4,6 +4,7 @@ import LinearGradient from 'react-native-linear-gradient'
 import styles from './CareStyle'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import colors from '../../Styles/_colors'
+import { TouchableOpacity } from 'react-native-gesture-handler'
 
 /* import { useNavigation } from '@react-navigation/native' */
 
@@ -55,6 +56,48 @@ const CareScreen = () => {
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Basal Metabolic Rate</Text>
             <Text style={styles.dataUserText}>1,761 Calories/day</Text>
+          </View>
+          <View style={styles.content}>
+            <Text style={styles.titleProfile}>
+              when you finish a task according to the time registered, click on the corresponding button to register
+            </Text>
+            <View style={styles.divider}></View>
+          </View>
+          <View style={styles.dataUserContainerOne}>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Exercises</Text>
+              <Icon name='dumbbell' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Study</Text>
+              <Icon name='journal-whills' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.dataUserContainerOne}>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Maintenance</Text>
+              <Icon name='tools' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Hard work</Text>
+              <Icon name='dumbbell' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>

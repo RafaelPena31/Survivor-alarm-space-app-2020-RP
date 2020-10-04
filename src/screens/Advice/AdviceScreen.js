@@ -1,17 +1,12 @@
 import React from 'react'
-import { SafeAreaView, Text, View, TouchableOpacity } from 'react-native'
+import { SafeAreaView, Text, View, TouchableOpacity, Image } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
-import LinearGradient from 'react-native-linear-gradient'
-import colors from '../../Styles/_colors'
 import headerStyle from '../../components/Header/HeaderStyle'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import styles from './AdviceStyle'
 import { useNavigation } from '@react-navigation/native'
+import scheduleImage from '../../assets/images/schedule.png'
 /* import { useNavigation } from '@react-navigation/native' */
-
-const lorem =
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam varius eget sem ut rhoncus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus eu laoreet magna. Aenean vitae eleifend erat. Proin ex purus, ultricies sed malesuada non, gravida ut urna. Integer auctor consequat pretium. Phasellus id blandit lorem. Sed et leo quis diam vulputate lobortis. Duis venenatis commodo aliquet. Nulla at pellentesque nulla.'
-
 const AdviceScreen = () => {
   const navigation = useNavigation()
 
@@ -29,8 +24,8 @@ const AdviceScreen = () => {
 
           <Text style={styles.subheading}>Melatonin</Text>
           <Text style={styles.paragraph}>
-            <Text style={styles.focusText}>Melatonin</Text> is a hormone made by the pineal gland. Melatonin helps your body know when it's
-            time to:
+            <Text style={styles.focusText}>Melatonin</Text> is a hormone made by the pineal gland. Melatonin helps your body know when
+            it&#39;s time to:
             <Text style={styles.focusText}> Sleep</Text> or <Text style={styles.focusText}>wake up. </Text>
             Such as much hormones you can consume melatonin to help you sleep. But be careful, if you take too much melatonin, your brain
             wont produce it anymore and you will need to consume melatonin if you want to sleep.
@@ -39,10 +34,10 @@ const AdviceScreen = () => {
           <Text style={styles.subheading}>When to use the sleep inducer?</Text>
           <Text style={styles.paragraph}>
             The sleep inducer is based on taking a pill which contains <Text style={styles.focusText}>Melatonin</Text> (mentioned in the
-            previous topic) . As mentioned before melatonin has its risks, so you don't want to take too much, with that in mind, a safe
+            previous topic) . As mentioned before melatonin has its risks, so you don&#39;t want to take too much, with that in mind, a safe
             amount to take, is around <Text style={styles.focusText}> 3 to 4 times per week. </Text>
-            And always you have to make sure you're in a <Text style={styles.focusText}>calm, quiet, and a dark enviromment,</Text> for the
-            inducer to work.
+            And always you have to make sure you&#39;re in a <Text style={styles.focusText}>calm, quiet, and a dark enviromment,</Text> for
+            the inducer to work.
           </Text>
 
           <Text style={styles.subheading}>Blue pigmentation makes you stay awake</Text>
@@ -61,13 +56,13 @@ const AdviceScreen = () => {
           <Text style={styles.paragraph}>
             Don’t eat a large meal before bedtime. If you are hungry at night, eat a light, healthy snack.
           </Text>
-          <Text style={styles.paragraph}>If possible, don't use any eletronics before sleep</Text>
+          <Text style={styles.paragraph}>If possible, don&#39;t use any eletronics before sleep</Text>
 
           <Text style={styles.subheading}>How to prevent the jet lag effect</Text>
           <Text style={styles.paragraph}>
             The jet lag effect happens whenever you are exposed to changes in the perception of time zones. To prevent it, it is recommended
             that you stay in shape, exercise regularly, get plenty of rest and follow a rich diet. It is also advised to avoid the use of
-            sleep inducers unless necessary, and try to keep a regular sleep schedule that doesn't push your body too much.
+            sleep inducers unless necessary, and try to keep a regular sleep schedule that doesn&#39;t push your body too much.
           </Text>
 
           <Text style={styles.subheading}>Items that can be used to make resting easier</Text>
@@ -82,6 +77,16 @@ const AdviceScreen = () => {
             mood and improves your capabilities of focusing on other tasks through the day. However, it should be avoided when trying to
             sleep.
           </Text>
+
+          <Text style={styles.subheading}>Sleep routine</Text>
+          <Text style={styles.paragraph}>
+            Sleep schedules help not only crew members to prepare for a circadian shift, but also Mission Control Center employees, who
+            often work shift work and other unusual schedules. Preparing the body for a circadian shift is the best way to avoid the
+            potentially dangerous side effects that accompany a lack of sleep.Photo credit: Steven Lockley, Associate Professor of Medicine,
+            Harvard University, Neuroscientist and member of NASA’s Fatigue Management Team and Dr. Smith Johnston, NASA Flight Surgeon,
+            Medical Officer and Lead of NASA’s Fatigue Management Team Credits: NASA
+          </Text>
+          <Image source={scheduleImage} style={styles.image} />
         </View>
       </ScrollView>
     </SafeAreaView>
