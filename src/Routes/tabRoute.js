@@ -51,7 +51,7 @@ function TabRoute() {
         name='Care'
         component={CareScreen}
         options={{
-          tabBarLabel: 'Your cares',
+          tabBarLabel: 'Your infos and cares',
           // eslint-disable-next-line react/display-name
           tabBarIcon: ({ size, focused }) => {
             return <Icon name='heartbeat-alt' size={size} color={focused ? colors.complementarySemiDark : colors.complementaryDark} />
