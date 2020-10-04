@@ -35,15 +35,3 @@ const styles = StyleSheet.create({
 
 export default Form
 
-/*
-nome
-idade
-altura
-sexo
-peso
---
-selects => EXERCICIO ESTUDO MANUTENCAO
-picker => tempo durante os tópicos anteriores
-
-
-*/
