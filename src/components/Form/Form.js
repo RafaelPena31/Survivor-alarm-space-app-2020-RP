@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native'
 import { Formik } from 'formik'
 
 // eslint-disable-next-line react/prop-types
-const Form = ({ children }) => {
+const Form = ({ children, onSubmit }) => {
   const data = {
     name: '',
     age: '',
@@ -14,9 +14,9 @@ const Form = ({ children }) => {
 
   return (
     <View style={styles.form}>
-      <Formik initialValues={data} onSubmit={() => alert('submitado my good')}>
-        <>{children}</>
-      </Formik>
+      {/* <Formik initialValues={data} onSubmit={onSubmit}> */}
+      <>{children}</>
+      {/* </Formik> */}
     </View>
   )
 }

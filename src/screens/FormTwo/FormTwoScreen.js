@@ -16,10 +16,12 @@ const FormTwoScreen = () => {
   const [touchableColor1, setTouchableColor1] = useState(false)
   const [touchableColor2, setTouchableColor2] = useState(false)
   const [touchableColor3, setTouchableColor3] = useState(false)
+  const [touchableColor4, setTouchableColor4] = useState(false)
 
   const [selectedValue1, setSelectedValue1] = useState('')
   const [selectedValue2, setSelectedValue2] = useState('')
   const [selectedValue3, setSelectedValue3] = useState('')
+  const [selectedValue4, setSelectedValue4] = useState('')
 
   const navigation = useNavigation()
 
@@ -48,7 +50,7 @@ const FormTwoScreen = () => {
                   onPress={() => {
                     setTouchableColor1(!touchableColor1)
                   }}>
-                  <Text style={styles.headerText}>Exercises</Text>
+                  <Text style={[styles.headerText, touchableColor1 ? styles.greenHeaderText : styles.blackHeaderText]}>Exercises</Text>
                   <Icon name='dumbbell' size={86} style={[styles.image, touchableColor1 ? styles.selectedIcon : styles.unselectedIcon]} />
                   <View style={styles.pickerList}>
                     <Picker
@@ -95,7 +97,7 @@ const FormTwoScreen = () => {
                   onPress={() => {
                     setTouchableColor2(!touchableColor2)
                   }}>
-                  <Text style={styles.headerText}>Study</Text>
+                  <Text style={[styles.headerText, touchableColor2 ? styles.greenHeaderText : styles.blackHeaderText]}>Exercises</Text>
                   <Icon
                     name='journal-whills'
                     size={86}
@@ -140,16 +142,17 @@ const FormTwoScreen = () => {
                     </Picker>
                   </View>
                 </TouchableOpacity>
+
                 <TouchableOpacity
                   style={[styles.touchableItem, touchableColor3 ? styles.selectedItem : {}]}
                   onPress={() => {
                     setTouchableColor3(!touchableColor3)
                   }}>
-                  <Text style={styles.headerText}>Maintenance</Text>
+                  <Text style={[styles.headerText, touchableColor3 ? styles.greenHeaderText : styles.blackHeaderText]}>Exercises</Text>
                   <Icon name='tools' size={86} style={[styles.image, touchableColor3 ? styles.selectedIcon : styles.unselectedIcon]} />
                   <View style={styles.pickerList}>
                     <Picker
-                      selectedValue={selectedValue1}
+                      selectedValue={selectedValue3}
                       style={{ height: 50, width: 100 }}
                       onValueChange={itemValue => setSelectedValue3(itemValue)}>
                       <Picker.Item label='1h' value='1' />
@@ -172,6 +175,53 @@ const FormTwoScreen = () => {
                       selectedValue={selectedValue3}
                       style={{ height: 50, width: 100 }}
                       onValueChange={itemValue => setSelectedValue3(itemValue)}>
+                      <Picker.Item label='5m' value='1' />
+                      <Picker.Item label='10m' value='2' />
+                      <Picker.Item label='15m' value='3' />
+                      <Picker.Item label='20m' value='4' />
+                      <Picker.Item label='25m' value='5' />
+                      <Picker.Item label='30m' value='6' />
+                      <Picker.Item label='35m' value='7' />
+                      <Picker.Item label='40m' value='8' />
+                      <Picker.Item label='45m' value='9' />
+                      <Picker.Item label='50m' value='10' />
+                      <Picker.Item label='55m' value='11' />
+                    </Picker>
+                  </View>
+                </TouchableOpacity>
+
+                <TouchableOpacity
+                  style={[styles.touchableItem, touchableColor4 ? styles.selectedItem : {}]}
+                  onPress={() => {
+                    setTouchableColor4(!touchableColor4)
+                  }}>
+                  <Text style={[styles.headerText, touchableColor4 ? styles.greenHeaderText : styles.blackHeaderText]}>Exercises</Text>
+                  <Icon name='dumbbell' size={86} style={[styles.image, touchableColor4 ? styles.selectedIcon : styles.unselectedIcon]} />
+                  <View style={styles.pickerList}>
+                    <Picker
+                      selectedValue={selectedValue4}
+                      style={{ height: 50, width: 100 }}
+                      onValueChange={itemValue => setSelectedValue4(itemValue)}>
+                      <Picker.Item label='1h' value='1' />
+                      <Picker.Item label='2h' value='2' />
+                      <Picker.Item label='3h' value='3' />
+                      <Picker.Item label='4h' value='4' />
+                      <Picker.Item label='5h' value='5' />
+                      <Picker.Item label='6h' value='6' />
+                      <Picker.Item label='7h' value='7' />
+                      <Picker.Item label='8h' value='8' />
+                      <Picker.Item label='9h' value='9' />
+                      <Picker.Item label='10h' value='10' />
+                      <Picker.Item label='11h' value='11' />
+                      <Picker.Item label='12h' value='12' />
+                    </Picker>
+
+                    <Text style={{ fontWeight: 'bold', fontSize: 32, marginLeft: 15, marginRight: 25 }}> + </Text>
+
+                    <Picker
+                      selectedValue={selectedValue4}
+                      style={{ height: 50, width: 100 }}
+                      onValueChange={itemValue => setSelectedValue4(itemValue)}>
                       <Picker.Item label='5m' value='1' />
                       <Picker.Item label='10m' value='2' />
                       <Picker.Item label='15m' value='3' />

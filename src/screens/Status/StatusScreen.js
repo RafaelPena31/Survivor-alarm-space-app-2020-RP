@@ -71,6 +71,47 @@ const StatusScreen = () => {
       (() => {
         waterIntake = 2000
       })()
+
+    function calculatePercentage(exercises, studies, maintenance) {
+      let health
+      let food
+      let water
+      let sleep
+
+      exercices == 1 &&
+        (() => {
+          health += 5
+          food -= 10
+          water -= 15
+          sleep -= 10
+        })
+
+      exercises >= 2 &&
+        (() => {
+          health += 15
+          food -= 20
+          water -= 25
+          sleep -= 15
+        })
+
+      studies =
+        1 &&
+        (() => {
+          food -= 5
+          water -= 5
+          sleep -= 5
+        })
+
+      while (studies > 0) {
+        food -= studies * 5
+        water -= studies * 5
+        sleep -= studies * 5
+
+        studies--
+      }
+
+      maintenance = 1
+    }
   }
 
   return (
