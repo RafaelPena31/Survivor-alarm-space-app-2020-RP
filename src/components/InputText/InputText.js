@@ -2,10 +2,17 @@ import React from 'react'
 import { View, StyleSheet, TextInput } from 'react-native'
 
 // eslint-disable-next-line react/prop-types
-const InputText = ({ placeHolderText, maxLength }) => {
+const InputText = ({ placeHolderText, maxLength, value, onChange }) => {
   return (
     <View>
-      <TextInput style={[styles.input]} placeholder={placeHolderText} maxLength={maxLength} placeholderTextColor='#ccc' />
+      <TextInput
+        style={[styles.input]}
+        placeholder={placeHolderText}
+        maxLength={maxLength}
+        placeholderTextColor='#ccc'
+        value={value}
+        onChangeText={onChange}
+      />
     </View>
   )
 }

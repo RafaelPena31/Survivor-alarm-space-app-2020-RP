@@ -56,12 +56,22 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     textAlign: 'center'
   },
+
+  greenHeaderText: {
+    color: '#34CB79'
+  },
+
+  blackHeaderText: {
+    color: '#000'
+  },
+
   header: {
     marginBottom: 50,
     fontSize: 28,
     fontWeight: '700',
     color: '#fff'
   },
+
   image: {
     width: 100,
     height: 100,
