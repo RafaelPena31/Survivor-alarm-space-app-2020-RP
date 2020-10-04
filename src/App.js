@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler'
 import React, { Component } from 'react'
 import { StatusBar } from 'react-native'
-import Routes from './Routes'
+import Routes from './Routes/Routes'
 
 import OneSignal from 'react-native-onesignal'
 

@@ -1,10 +1,11 @@
 import React from 'react'
-import FormOneScreen from './src/screens/FormOne/FormOneScreen'
-import FormTwoScreen from './src/screens/FormTwo/FormTwoScreen'
-import StatusScreen from './src/screens/StatusScreen/StatusScreen'
+import FormOneScreen from '../screens/FormOne/FormOneScreen'
+import FormTwoScreen from '../screens/FormTwo/FormTwoScreen'
+import StatusScreen from '../screens/Status/StatusScreen'
+import AdviceScreen from '../screens/Advice/AdviceScreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack'
-import HomeScreen from './src/screens/Home/HomeScreen'
+import HomeScreen from '../screens/Home/HomeScreen'
 
 const Stack = createStackNavigator()
 
@@ -28,7 +29,6 @@ const Routes = () => {
           name='Home'
           component={HomeScreen}
           options={{
-            title: 'Getting Started',
             transitionSpec: {
               open: config,
               close: config
@@ -39,7 +39,6 @@ const Routes = () => {
           name='FormOne'
           component={FormOneScreen}
           options={{
-            title: 'Getting Started',
             transitionSpec: {
               open: config,
               close: config
@@ -50,14 +49,32 @@ const Routes = () => {
           name='FormTwo'
           component={FormTwoScreen}
           options={{
-            title: 'Getting Started',
             transitionSpec: {
               open: config,
               close: config
             }
           }}
         />
-        <Stack.Screen name='Status' component={StatusScreen} />
+        <Stack.Screen
+          name='Status'
+          component={StatusScreen}
+          options={{
+            transitionSpec: {
+              open: config,
+              close: config
+            }
+          }}
+        />
+        <Stack.Screen
+          name='Advice'
+          component={AdviceScreen}
+          options={{
+            transitionSpec: {
+              open: config,
+              close: config
+            }
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )
