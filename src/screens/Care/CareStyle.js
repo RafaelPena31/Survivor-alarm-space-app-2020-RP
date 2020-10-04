@@ -39,7 +39,8 @@ const styles = StyleSheet.create({
   },
   dataUserContainerOne: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    paddingVertical: 5,
   }
 })
 

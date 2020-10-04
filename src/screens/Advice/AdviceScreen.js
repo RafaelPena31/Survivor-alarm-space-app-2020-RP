@@ -46,10 +46,3 @@ const AdviceScreen = () => {
 }
 
 export default AdviceScreen
-
-
-
-/*
-taxa basa
-
-*/
