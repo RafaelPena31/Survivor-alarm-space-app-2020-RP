@@ -17,36 +17,30 @@ const StatusScreen = () => {
   const [gender, setGender] = useState()
   const [bmr, setBmr] = useState(0)
 
+  let [points, setPoints] = useState(0)
+  let [day, setDay] = useState(24)
+  let [sleep, setSleep] = useState(8)
+  let [waterIntake, setWaterIntake] = useState()
+
+  let [health, setHealth] = useState()
+  let [food, setFood] = useState()
+  let [water, setWater] = useState()
+
   const navigation = useNavigation()
 
-  function pointGrape(exercies, studies, maintenance) {
-    let point
-    let preferedHourSleep = 8
-    let sleep
-    let day = 24
-    let waterIntake
-
-    if (exercies + studies + maintenance <= day - preferedHourSleep) {
-      day = 16
+  function pointGrape(exercises, studies, maintenance) {
+    if (exercises + studies + maintenance <= day - sleep) {
+      setDay(16)
     } else {
-      sleep = day - (exercies + studies + maintenance)
+      setSleep(day - (exercises + studies + maintenance))
     }
 
-    function points() {
-      while (exercies > 0) {
-        exercies--
-        point += 2
-      }
+    function pointsCalc() {
+      setPoints(points + 2 * exercises)
 
-      while (studies > 0) {
-        studies--
-        point += 1
-      }
+      setPoints(points + 1 * studies)
 
-      while (maintenance > 0) {
-        maintenance--
-        point += 3
-      }
+      setPoints(points + 3 * maintenance)
     }
 
     gender == 'Feminino' ? womanBazalCalc() : menBazalCalc()
@@ -59,60 +53,35 @@ const StatusScreen = () => {
       setBmr(66.47 + 13.75 * weight + 5.003 * height - 6.755 * age)
     }
 
-    points()
+    pointsCalc()
 
-    while (point > 0) {
-      waterIntake += 150
+    while (points > 0) {
       setBmr(bmr + 50)
-      point--
+      setPoints(points - 1)
     }
 
-    waterIntake < 2000 &&
-      (() => {
-        waterIntake = 2000
-      })()
+    waterIntake >= 2000 ? 2000 : waterIntake
 
     function calculatePercentage(exercises, studies, maintenance) {
-      let health
-      let food
-      let water
-      let sleep
+      setHealth(exercises >= 2 ? 2.5 : 5)
 
-      exercices == 1 &&
-        (() => {
-          health += 5
-          food -= 10
-          water -= 15
-          sleep -= 10
-        })
+      setFood(food - exercises * 10)
+      setWater(water - exercises * 10)
+      setSleep(sleep - exercises * 3)
 
-      exercises >= 2 &&
-        (() => {
-          health += 15
-          food -= 20
-          water -= 25
-          sleep -= 15
-        })
+      setFood(food - studies * 5)
+      setWater(water - studies * 5)
+      setSleep(sleep - studies * 3)
 
-      studies =
-        1 &&
-        (() => {
-          food -= 5
-          water -= 5
-          sleep -= 5
-        })
-
-      while (studies > 0) {
-        food -= studies * 5
-        water -= studies * 5
-        sleep -= studies * 5
-
-        studies--
-      }
-
-      maintenance = 1
+      setFood(food - maintenance * 7)
+      setWater(water - maintenance * 5)
+      setSleep(sleep - maintenance * 3)
     }
+
+    calculatePercentage()
   }
+
+  pointGrape()
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -155,7 +124,7 @@ const StatusScreen = () => {
           </View>
           <View style={styles.statusBarContainer}>
             <View style={styles.progressBarContainer}>
-              <Progress.Bar progress={0.9} width={350} height={20} borderRadius={50} color='green' />
+              <Progress.Bar progress={health / 100} width={350} height={20} borderRadius={50} color='green' />
               <Text style={styles.labelProgessBar}>Health - 90%</Text>
             </View>
             <View style={styles.progressBarContainer}>

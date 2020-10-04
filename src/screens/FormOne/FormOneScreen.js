@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { SafeAreaView, View, Text } from 'react-native'
+import { SafeAreaView, View, Text, AsyncStorage } from 'react-native'
 
 import Form from '../../components/Form/Form'
 import InputText from '../../components/InputText/InputText'
@@ -20,6 +20,18 @@ const FormOneScreen = () => {
   const [height, setHeight] = useState('')
   const [gender, setGender] = useState('')
   const [name, setName] = useState('')
+
+  const save = async () => {
+    try {
+      await AsyncStorage.setItem('name', name)
+      await AsyncStorage.setItem('age', age)
+      await AsyncStorage.setItem('gender', gender)
+      await AsyncStorage.setItem('height', height)
+      await AsyncStorage.setItem('weight', weight)
+    } catch (e) {
+      alert(e)
+    }
+  }
 
   return (
     <SafeAreaView style={styles.safeAreaView}>
@@ -42,9 +54,7 @@ const FormOneScreen = () => {
               onPress={() => {
                 const fields = [weight, age, height, gender, name]
                 const find = fields.find(v => v.length === 0)
-                typeof find !== 'undefined' && find.length === 0 ?
-                  alert('One or more fields haven\'t been filled') :
-                  navigation.navigate('FormTwo')
+                typeof find !== 'undefined' && find.length === 0 ? alert("One or more fields haven't been filled") : save()
               }}>
               <Text style={buttonStyles.textSubmit}>Next</Text>
             </TouchableOpacity>

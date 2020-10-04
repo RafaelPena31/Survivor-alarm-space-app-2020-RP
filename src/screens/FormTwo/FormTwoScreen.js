@@ -121,25 +121,6 @@ const FormTwoScreen = () => {
                       <Picker.Item label='11h' value='11' />
                       <Picker.Item label='12h' value='12' />
                     </Picker>
-
-                    <Text style={{ fontWeight: 'bold', fontSize: 32, marginLeft: 15, marginRight: 25 }}> + </Text>
-
-                    <Picker
-                      selectedValue={selectedValue3}
-                      style={{ height: 50, width: 100 }}
-                      onValueChange={itemValue => setSelectedValue2(itemValue)}>
-                      <Picker.Item label='5m' value='1' />
-                      <Picker.Item label='10m' value='2' />
-                      <Picker.Item label='15m' value='3' />
-                      <Picker.Item label='20m' value='4' />
-                      <Picker.Item label='25m' value='5' />
-                      <Picker.Item label='30m' value='6' />
-                      <Picker.Item label='35m' value='7' />
-                      <Picker.Item label='40m' value='8' />
-                      <Picker.Item label='45m' value='9' />
-                      <Picker.Item label='50m' value='10' />
-                      <Picker.Item label='55m' value='11' />
-                    </Picker>
                   </View>
                 </TouchableOpacity>
 
@@ -168,25 +149,6 @@ const FormTwoScreen = () => {
                       <Picker.Item label='11h' value='11' />
                       <Picker.Item label='12h' value='12' />
                     </Picker>
-
-                    <Text style={{ fontWeight: 'bold', fontSize: 32, marginLeft: 15, marginRight: 25 }}> + </Text>
-
-                    <Picker
-                      selectedValue={selectedValue3}
-                      style={{ height: 50, width: 100 }}
-                      onValueChange={itemValue => setSelectedValue3(itemValue)}>
-                      <Picker.Item label='5m' value='1' />
-                      <Picker.Item label='10m' value='2' />
-                      <Picker.Item label='15m' value='3' />
-                      <Picker.Item label='20m' value='4' />
-                      <Picker.Item label='25m' value='5' />
-                      <Picker.Item label='30m' value='6' />
-                      <Picker.Item label='35m' value='7' />
-                      <Picker.Item label='40m' value='8' />
-                      <Picker.Item label='45m' value='9' />
-                      <Picker.Item label='50m' value='10' />
-                      <Picker.Item label='55m' value='11' />
-                    </Picker>
                   </View>
                 </TouchableOpacity>
 
@@ -195,8 +157,12 @@ const FormTwoScreen = () => {
                   onPress={() => {
                     setTouchableColor4(!touchableColor4)
                   }}>
-                  <Text style={[styles.headerText, touchableColor4 ? styles.greenHeaderText : styles.blackHeaderText]}>Exercises</Text>
-                  <Icon name='dumbbell' size={86} style={[styles.image, touchableColor4 ? styles.selectedIcon : styles.unselectedIcon]} />
+                  <Text style={[styles.headerText, touchableColor4 ? styles.greenHeaderText : styles.blackHeaderText]}>Hard work</Text>
+                  <Icon
+                    name='place-of-worship'
+                    size={86}
+                    style={[styles.image, touchableColor4 ? styles.selectedIcon : styles.unselectedIcon]}
+                  />
                   <View style={styles.pickerList}>
                     <Picker
                       selectedValue={selectedValue4}
@@ -214,25 +180,6 @@ const FormTwoScreen = () => {
                       <Picker.Item label='10h' value='10' />
                       <Picker.Item label='11h' value='11' />
                       <Picker.Item label='12h' value='12' />
-                    </Picker>
-
-                    <Text style={{ fontWeight: 'bold', fontSize: 32, marginLeft: 15, marginRight: 25 }}> + </Text>
-
-                    <Picker
-                      selectedValue={selectedValue4}
-                      style={{ height: 50, width: 100 }}
-                      onValueChange={itemValue => setSelectedValue4(itemValue)}>
-                      <Picker.Item label='5m' value='1' />
-                      <Picker.Item label='10m' value='2' />
-                      <Picker.Item label='15m' value='3' />
-                      <Picker.Item label='20m' value='4' />
-                      <Picker.Item label='25m' value='5' />
-                      <Picker.Item label='30m' value='6' />
-                      <Picker.Item label='35m' value='7' />
-                      <Picker.Item label='40m' value='8' />
-                      <Picker.Item label='45m' value='9' />
-                      <Picker.Item label='50m' value='10' />
-                      <Picker.Item label='55m' value='11' />
                     </Picker>
                   </View>
                 </TouchableOpacity>

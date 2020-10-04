@@ -1,5 +1,5 @@
-import React from 'react'
-import { SafeAreaView, ScrollView, Text, View } from 'react-native'
+import React, { useState } from 'react'
+import { SafeAreaView, ScrollView, Text, View, AsyncStorage } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import styles from './CareStyle'
 import Icon from 'react-native-vector-icons/FontAwesome5'
@@ -10,6 +10,21 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 
 const CareScreen = () => {
   /*   const navigation = useNavigation() */
+
+  const [name, setName] = useState()
+  const [gender, setGender] = useState()
+  const [height, setHeight] = useState()
+  const [weight, setWeight] = useState()
+  const [BMI, setBMI] = useState()
+
+  useEffect(async () => {
+    setName(await AsyncStorage.getItem('name', name))
+    setAge(await AsyncStorage.getItem('age', age))
+    setGender(await AsyncStorage.getItem('gender', gender))
+    setHeight(await AsyncStorage.getItem('height', height))
+    setWeight(await AsyncStorage.getItem('weight', weight))
+    setBMI(weight / height ** 2)
+  }, [])
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -31,27 +46,27 @@ const CareScreen = () => {
           </View> */}
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Name</Text>
-            <Text style={styles.dataUserText}>Astronaut Name</Text>
+            <Text style={styles.dataUserText}>{name}</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Age</Text>
-            <Text style={styles.dataUserText}>20</Text>
+            <Text style={styles.dataUserText}>{age}</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Gender</Text>
-            <Text style={styles.dataUserText}>Male</Text>
+            <Text style={styles.dataUserText}>{gender}</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Weight</Text>
-            <Text style={styles.dataUserText}>165,35 lbs</Text>
+            <Text style={styles.dataUserText}>{weight} kg</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Height</Text>
-            <Text style={styles.dataUserText}>5&#39;10</Text>
+            <Text style={styles.dataUserText}>{height}</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Body Mass Index</Text>
-            <Text style={styles.dataUserText}>23.7 (normal weight)</Text>
+            <Text style={styles.dataUserText}>{BMI} (normal weight)</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Basal Metabolic Rate</Text>
