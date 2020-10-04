@@ -9,13 +9,15 @@ import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import buttonStyles from '../../Styles/ButtonStyles/ButtonStyles'
 import Icon from 'react-native-vector-icons/FontAwesome5'
+import LinearGradient from 'react-native-linear-gradient'
+import colors from '../../Styles/_colors'
 
 const FormOneScreen = () => {
   const navigation = useNavigation()
 
   return (
-    <>
-      <SafeAreaView style={styles.safeAreaView}>
+    <SafeAreaView style={styles.safeAreaView}>
+      <LinearGradient colors={[colors.principal, colors.secondaryDark, colors.secondaryDark]}>
         <View style={styles.iconContainer}>
           <Icon name='user-astronaut' size={130} color='#fff' />
           <Text style={styles.title}>Who are you?</Text>
@@ -30,8 +32,8 @@ const FormOneScreen = () => {
             <Text style={buttonStyles.textSubmit}>Next</Text>
           </TouchableOpacity>
         </Form>
-      </SafeAreaView>
-    </>
+      </LinearGradient>
+    </SafeAreaView>
   )
 }
 

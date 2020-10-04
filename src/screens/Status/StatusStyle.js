@@ -5,10 +5,8 @@ const { width, height } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   statusContainer: {
-    flex: 1,
     width: width,
-    height: height,
-    backgroundColor: colors.principal
+    height: height
   },
   trianguloContainer: {
     alignItems: 'baseline',
@@ -20,7 +18,7 @@ const styles = StyleSheet.create({
     borderRightWidth: width,
     borderRightColor: 'transparent',
     borderTopWidth: width,
-    borderTopColor: colors.complementarySemiDark,
+    borderTopColor: colors.complementary,
     margin: 0
   },
   superiorContainer: {

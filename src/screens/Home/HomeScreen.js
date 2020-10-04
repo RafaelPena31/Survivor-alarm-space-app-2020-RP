@@ -6,22 +6,26 @@ import astronautaBg from '../../assets/images/astronauta.png'
 import { useNavigation } from '@react-navigation/native'
 
 import styles from './HomeStyle'
+import LinearGradient from 'react-native-linear-gradient'
+import colors from '../../Styles/_colors'
 
 const HomeScreen = () => {
   const navigation = useNavigation()
 
   return (
     <SafeAreaView style={styles.homeContainer}>
-      <Image source={astronautaBg} style={styles.image} />
-      <View style={styles.titleContainer}>
-        <Text style={styles.title}>Survive with us</Text>
-        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('FormOne')}>
-          <View style={styles.textButtonContainer}>
-            <Text style={styles.textButton}>Start</Text>
-            <Icon name='arrow-right' color='#fff' size={30} />
-          </View>
-        </TouchableOpacity>
-      </View>
+      <LinearGradient colors={[colors.secondaryDark, colors.secondaryDark, colors.principal]}>
+        <Image source={astronautaBg} style={styles.image} />
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Survive with us</Text>
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('FormOne')}>
+            <View style={styles.textButtonContainer}>
+              <Text style={styles.textButton}>Start</Text>
+              <Icon name='arrow-right' color='#fff' size={30} />
+            </View>
+          </TouchableOpacity>
+        </View>
+      </LinearGradient>
     </SafeAreaView>
   )
 }
