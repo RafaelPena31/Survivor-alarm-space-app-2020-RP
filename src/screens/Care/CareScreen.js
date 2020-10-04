@@ -58,11 +58,19 @@ const CareScreen = () => {
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Weight</Text>
+<<<<<<< HEAD
             <Text style={styles.dataUserText}>{weight} kg</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Height</Text>
             <Text style={styles.dataUserText}>{height}</Text>
+=======
+            <Text style={styles.dataUserText}>75kg</Text>
+          </View>
+          <View style={styles.dataUserContainerOne}>
+            <Text style={styles.dataUserText}>Height</Text>
+            <Text style={styles.dataUserText}>177cm</Text>
+>>>>>>> 8bc26290afebea3721afded9c3bb7829667ae7b1
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Body Mass Index</Text>
@@ -112,6 +120,42 @@ const CareScreen = () => {
               }}>
               <Text style={styles.headerText}>Hard work</Text>
               <Icon name='dumbbell' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.dataUserContainerOne}>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Sleep</Text>
+              <Icon name='bell-slash' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Water</Text>
+              <Icon name='water' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.dataUserContainerOne}>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Food</Text>
+              <Icon name='hamburger' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Light</Text>
+              <Icon name='sun' size={86} style={styles.image} color={colors.complementaryDark} />
             </TouchableOpacity>
           </View>
         </View>

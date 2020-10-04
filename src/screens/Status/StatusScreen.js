@@ -100,8 +100,8 @@ const StatusScreen = () => {
                 <View style={styles.textContainer}>
                   <Text style={styles.nameText}>Astronaut name</Text>
                   <Text style={styles.ageText}>age: 20</Text>
-                  <Text style={styles.ageText}>weight: 165,35 lb</Text>
-                  <Text style={styles.ageText}>height: 5&#39;10 </Text>
+                  <Text style={styles.ageText}>weight: 72kg</Text>
+                  <Text style={styles.ageText}>height: 177cm </Text>
                 </View>
               </View>
               {/* =================================================== */}
