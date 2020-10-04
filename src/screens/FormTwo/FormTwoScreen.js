@@ -26,8 +26,8 @@ const FormTwoScreen = () => {
   return (
     <>
       <SafeAreaView style={styles.safeAreaView}>
-        <LinearGradient colors={[colors.complementarySemiDark, colors.complementary, colors.complementary]}>
-          <ScrollView style={styles.scrollView}>
+        <ScrollView style={styles.scrollView}>
+          <LinearGradient colors={[colors.complementarySemiDark, colors.complementary, colors.complementary]}>
             <View style={headerStyle.headerContainer}>
               <TouchableOpacity onPress={() => navigation.goBack()}>
                 <Icon name='reply' size={40} color={'#fff'} />
@@ -192,8 +192,8 @@ const FormTwoScreen = () => {
                 </TouchableOpacity>
               </ScrollView>
             </Form>
-          </ScrollView>
-        </LinearGradient>
+          </LinearGradient>
+        </ScrollView>
       </SafeAreaView>
     </>
   )

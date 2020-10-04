@@ -15,8 +15,8 @@ const StatusScreen = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <LinearGradient colors={[colors.principal, colors.secondaryDark, colors.principal]} style={styles.statusContainer}>
-        <ScrollView>
+      <ScrollView>
+        <LinearGradient colors={[colors.principal, colors.secondaryDark, colors.principal]} style={styles.statusContainer}>
           {/* <Progress.Bar progress={0.9} width={350} color={'blue'} height={15} borderRadius={50} /> */}
           <View style={styles.trianguloContainer}>
             <LinearGradient
@@ -78,8 +78,8 @@ const StatusScreen = () => {
               <Text style={styles.labelProgessBar}>Good contact with light - 79%</Text>
             </View>
           </View>
-        </ScrollView>
-      </LinearGradient>
+        </LinearGradient>
+      </ScrollView>
     </SafeAreaView>
   )
 }

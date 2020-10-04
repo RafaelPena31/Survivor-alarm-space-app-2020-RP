@@ -1,15 +1,11 @@
 import { Dimensions, StyleSheet } from 'react-native'
-import colors from '../../Styles/_colors'
 
 const { width } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   safeAreaView: {
-    width: width,
-    height: '100%',
-    backgroundColor: colors.principal,
-    justifyContent: 'space-between',
-    paddingVertical: 30
+    flex: 1,
+    width: width
   },
   iconContainer: {
     alignItems: 'center',

@@ -18,7 +18,9 @@ const FormOneScreen = () => {
   return (
     <SafeAreaView style={styles.safeAreaView}>
       <ScrollView>
-        <LinearGradient colors={[colors.principal, colors.secondaryDark, colors.secondaryDark]}>
+        <LinearGradient
+          colors={[colors.principal, colors.secondaryDark, colors.secondaryDark]}
+          style={{ height: '100%', justifyContent: 'space-between', paddingVertical: 30 }}>
           <View style={styles.iconContainer}>
             <Icon name='user-astronaut' size={130} color='#fff' />
             <Text style={styles.title}>Who are you?</Text>

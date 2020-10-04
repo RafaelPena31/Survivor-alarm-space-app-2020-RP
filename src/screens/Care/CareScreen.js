@@ -12,13 +12,13 @@ const CareScreen = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <LinearGradient colors={[colors.principal, colors.secondaryDark, colors.complementaryDark]} style={styles.careContainer}>
-        <View style={styles.iconContainer}>
-          <Icon name='user-astronaut' size={130} color='#fff' />
-          <Text style={styles.title}>Infos and cares</Text>
-        </View>
-      </LinearGradient>
       <ScrollView>
+        <LinearGradient colors={[colors.principal, colors.secondaryDark, colors.complementaryDark]} style={styles.careContainer}>
+          <View style={styles.iconContainer}>
+            <Icon name='user-astronaut' size={130} color='#fff' />
+            <Text style={styles.title}>Infos and cares</Text>
+          </View>
+        </LinearGradient>
         <View style={styles.content}>
           <Text style={styles.titleProfile}>Profile</Text>
         </View>
