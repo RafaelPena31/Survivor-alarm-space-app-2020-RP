@@ -99,6 +99,42 @@ const CareScreen = () => {
               <Icon name='dumbbell' size={86} style={styles.image} color={colors.complementaryDark} />
             </TouchableOpacity>
           </View>
+          <View style={styles.dataUserContainerOne}>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Sleep</Text>
+              <Icon name='bell-slash' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Water</Text>
+              <Icon name='water' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
+          </View>
+          <View style={styles.dataUserContainerOne}>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Food</Text>
+              <Icon name='hamburger' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.touchableItem}
+              onPress={() => {
+                alert('função state')
+              }}>
+              <Text style={styles.headerText}>Light</Text>
+              <Icon name='sun' size={86} style={styles.image} color={colors.complementaryDark} />
+            </TouchableOpacity>
+          </View>
         </View>
       </ScrollView>
     </SafeAreaView>
