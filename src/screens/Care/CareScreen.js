@@ -1,5 +1,5 @@
 import React from 'react'
-import { SafeAreaView, Text, View } from 'react-native'
+import { SafeAreaView, ScrollView, Text, View } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import styles from './CareStyle'
 import Icon from 'react-native-vector-icons/FontAwesome5'
@@ -18,6 +18,11 @@ const CareScreen = () => {
           <Text style={styles.title}>Infos and cares</Text>
         </View>
       </LinearGradient>
+      <ScrollView>
+        <View style={styles.content}>
+          <Text>Foi</Text>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   )
 }
