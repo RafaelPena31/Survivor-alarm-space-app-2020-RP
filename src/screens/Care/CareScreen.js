@@ -8,7 +8,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 
 /* import { useNavigation } from '@react-navigation/native' */
 
-const CareScreen = () => {
+const CareScreen = ({ sets }) => {
   /*   const navigation = useNavigation() */
 
   const [name, setName] = useState('')
@@ -99,16 +99,50 @@ const CareScreen = () => {
           <View style={styles.dataUserContainerOne}>
             <TouchableOpacity
               style={styles.touchableItem}
-              onPress={() => {
-                alert('função state')
+              onPress={async () => {
+                const h = sets.healthBar + 30
+                const s = sets.sleepBar + 30
+                const f = sets.foodBar + 30
+                const w = sets.waterBar + 30
+                const l = sets.lightBar + 30
+                const m = sets.melatoninBar + 30
+                sets.setHealthBar(h)
+                sets.setSleepBar(s)
+                sets.setFoodBar(f)
+                sets.setWaterBar(w)
+                sets.setLightBar(l)
+                sets.setMelatoninBar(m)
+                await AsyncStorage.setItem('healthBar', h)
+                await AsyncStorage.setItem('sleepBar', s)
+                await AsyncStorage.setItem('foodBar', f)
+                await AsyncStorage.setItem('waterBar', w)
+                await AsyncStorage.setItem('lightBar', l)
+                await AsyncStorage.setItem('melatoninBar', m)
               }}>
               <Text style={styles.headerText}>Exercises</Text>
               <Icon name='dumbbell' size={86} style={styles.image} color={colors.complementaryDark} />
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.touchableItem}
-              onPress={() => {
-                alert('função state')
+              onPress={async () => {
+                const h = sets.healthBar + 30
+                const s = sets.sleepBar + 30
+                const f = sets.foodBar + 30
+                const w = sets.waterBar + 30
+                const l = sets.lightBar + 30
+                const m = sets.melatoninBar + 30
+                sets.setHealthBar(h)
+                sets.setSleepBar(s)
+                sets.setFoodBar(f)
+                sets.setWaterBar(w)
+                sets.setLightBar(l)
+                sets.setMelatoninBar(m)
+                await AsyncStorage.setItem('healthBar', h)
+                await AsyncStorage.setItem('sleepBar', s)
+                await AsyncStorage.setItem('foodBar', f)
+                await AsyncStorage.setItem('waterBar', w)
+                await AsyncStorage.setItem('lightBar', l)
+                await AsyncStorage.setItem('melatoninBar', m)
               }}>
               <Text style={styles.headerText}>Study</Text>
               <Icon name='journal-whills' size={86} style={styles.image} color={colors.complementaryDark} />
@@ -117,16 +151,50 @@ const CareScreen = () => {
           <View style={styles.dataUserContainerOne}>
             <TouchableOpacity
               style={styles.touchableItem}
-              onPress={() => {
-                alert('função state')
+              onPress={async () => {
+                const h = sets.healthBar + 30
+                const s = sets.sleepBar + 30
+                const f = sets.foodBar + 30
+                const w = sets.waterBar + 30
+                const l = sets.lightBar + 30
+                const m = sets.melatoninBar + 30
+                sets.setHealthBar(h)
+                sets.setSleepBar(s)
+                sets.setFoodBar(f)
+                sets.setWaterBar(w)
+                sets.setLightBar(l)
+                sets.setMelatoninBar(m)
+                await AsyncStorage.setItem('healthBar', h)
+                await AsyncStorage.setItem('sleepBar', s)
+                await AsyncStorage.setItem('foodBar', f)
+                await AsyncStorage.setItem('waterBar', w)
+                await AsyncStorage.setItem('lightBar', l)
+                await AsyncStorage.setItem('melatoninBar', m)
               }}>
               <Text style={styles.headerText}>Maintenance</Text>
               <Icon name='tools' size={86} style={styles.image} color={colors.complementaryDark} />
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.touchableItem}
-              onPress={() => {
-                alert('função state')
+              onPress={async () => {
+                const h = sets.healthBar + 30
+                const s = sets.sleepBar + 30
+                const f = sets.foodBar + 30
+                const w = sets.waterBar + 30
+                const l = sets.lightBar + 30
+                const m = sets.melatoninBar + 30
+                sets.setHealthBar(h)
+                sets.setSleepBar(s)
+                sets.setFoodBar(f)
+                sets.setWaterBar(w)
+                sets.setLightBar(l)
+                sets.setMelatoninBar(m)
+                await AsyncStorage.setItem('healthBar', h)
+                await AsyncStorage.setItem('sleepBar', s)
+                await AsyncStorage.setItem('foodBar', f)
+                await AsyncStorage.setItem('waterBar', w)
+                await AsyncStorage.setItem('lightBar', l)
+                await AsyncStorage.setItem('melatoninBar', m)
               }}>
               <Text style={styles.headerText}>Hard work</Text>
               <Icon name='dumbbell' size={86} style={styles.image} color={colors.complementaryDark} />

@@ -89,7 +89,21 @@ function TabRoute() {
       />
       <Screen
         name='Care'
-        component={CareScreen}
+        children={() => <CareScreen
+          sets={{
+            healthBar,
+            setHealthBar,
+            sleepBar,
+            setSleepBar,
+            foodBar,
+            setFoodBar,
+            waterBar,
+            setWaterBar,
+            lightBar,
+            setLightBar,
+            melatoninBar,
+            setMelatoninBar
+          }} />}
         options={{
           tabBarLabel: 'Your infos and cares',
           // eslint-disable-next-line react/display-name
