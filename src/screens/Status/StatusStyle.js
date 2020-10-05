@@ -107,6 +107,40 @@ const styles = StyleSheet.create({
     textAlign: 'left',
     marginLeft: 47,
     fontFamily: 'Roboto-Bold'
+  },
+  table: {
+    justifyContent: 'space-between',
+    paddingVertical: 2,
+    backgroundColor: '#fff',
+    borderTopLeftRadius: 35,
+    borderTopRightRadius: 35,
+    marginTop: 20
+  },
+  tableText: {
+    fontSize: 20,
+    color: colors.principal,
+    fontFamily: 'Roboto-Bold'
+  },
+  tableData: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 12
+  },
+  content: {
+    alignItems: 'center',
+    padding: 20
+  },
+  titleProfile: {
+    fontFamily: 'Roboto-Bold',
+    fontSize: 35,
+    color: colors.complementaryDark,
+    marginBottom: 30,
+    textAlign: 'center'
+  },
+  divider: {
+    borderWidth: 1,
+    borderColor: colors.secondaryDark,
+    width: 370
   }
 })
 

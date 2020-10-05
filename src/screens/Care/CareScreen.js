@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SafeAreaView, ScrollView, Text, View, AsyncStorage } from 'react-native'
 import LinearGradient from 'react-native-linear-gradient'
 import styles from './CareStyle'
@@ -11,19 +11,36 @@ import { TouchableOpacity } from 'react-native-gesture-handler'
 const CareScreen = () => {
   /*   const navigation = useNavigation() */
 
-  const [name, setName] = useState()
-  const [gender, setGender] = useState()
-  const [height, setHeight] = useState()
-  const [weight, setWeight] = useState()
-  const [BMI, setBMI] = useState()
+  const [name, setName] = useState('')
+  const [gender, setGender] = useState('')
+  const [height, setHeight] = useState(0)
+  const [weight, setWeight] = useState(0)
+  const [age, setAge] = useState(0)
+  const [BMI, setBMI] = useState(0)
+  const [BMR, setBMR] = useState(0)
 
-  useEffect(async () => {
-    setName(await AsyncStorage.getItem('name', name))
-    setAge(await AsyncStorage.getItem('age', age))
-    setGender(await AsyncStorage.getItem('gender', gender))
-    setHeight(await AsyncStorage.getItem('height', height))
-    setWeight(await AsyncStorage.getItem('weight', weight))
-    setBMI(weight / height ** 2)
+  useEffect(() => {
+    ;(async () => {
+      setName(await AsyncStorage.getItem('name'))
+      setAge(await AsyncStorage.getItem('age'))
+      setGender(await AsyncStorage.getItem('gender'))
+      let _height = await AsyncStorage.getItem('height')
+      setHeight(_height)
+      const _weight = await AsyncStorage.getItem('weight')
+      setWeight(_weight)
+
+      setBMI(_weight / ((_height / 100) * (_height / 100)))
+
+      console.log(_height)
+      console.log(BMI)
+
+      gender == 'Male'
+        ? setBMR(66.47 + 13.75 * _weight + 5.003 * height - 6.755 * age)
+        : setBMR(655.7 + 13.75 * _weight + 5.003 * height - 6.755 * age)
+
+      await AsyncStorage.setItem('BMI', BMI)
+      await AsyncStorage.setItem('BMR', BMR)
+    })()
   }, [])
 
   return (
@@ -58,27 +75,19 @@ const CareScreen = () => {
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Weight</Text>
-<<<<<<< HEAD
-            <Text style={styles.dataUserText}>{weight} kg</Text>
+            <Text style={styles.dataUserText}>{weight}Kg</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Height</Text>
-            <Text style={styles.dataUserText}>{height}</Text>
-=======
-            <Text style={styles.dataUserText}>75kg</Text>
-          </View>
-          <View style={styles.dataUserContainerOne}>
-            <Text style={styles.dataUserText}>Height</Text>
-            <Text style={styles.dataUserText}>177cm</Text>
->>>>>>> 8bc26290afebea3721afded9c3bb7829667ae7b1
+            <Text style={styles.dataUserText}>{height / 100}m</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Body Mass Index</Text>
-            <Text style={styles.dataUserText}>{BMI} (normal weight)</Text>
+            <Text style={styles.dataUserText}>{BMI.toFixed(2)}</Text>
           </View>
           <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Basal Metabolic Rate</Text>
-            <Text style={styles.dataUserText}>1,761 Calories/day</Text>
+            <Text style={styles.dataUserText}>{BMR.toFixed(2)} Calories/day</Text>
           </View>
           <View style={styles.content}>
             <Text style={styles.titleProfile}>
@@ -120,42 +129,6 @@ const CareScreen = () => {
               }}>
               <Text style={styles.headerText}>Hard work</Text>
               <Icon name='dumbbell' size={86} style={styles.image} color={colors.complementaryDark} />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.dataUserContainerOne}>
-            <TouchableOpacity
-              style={styles.touchableItem}
-              onPress={() => {
-                alert('função state')
-              }}>
-              <Text style={styles.headerText}>Sleep</Text>
-              <Icon name='bell-slash' size={86} style={styles.image} color={colors.complementaryDark} />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.touchableItem}
-              onPress={() => {
-                alert('função state')
-              }}>
-              <Text style={styles.headerText}>Water</Text>
-              <Icon name='water' size={86} style={styles.image} color={colors.complementaryDark} />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.dataUserContainerOne}>
-            <TouchableOpacity
-              style={styles.touchableItem}
-              onPress={() => {
-                alert('função state')
-              }}>
-              <Text style={styles.headerText}>Food</Text>
-              <Icon name='hamburger' size={86} style={styles.image} color={colors.complementaryDark} />
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={styles.touchableItem}
-              onPress={() => {
-                alert('função state')
-              }}>
-              <Text style={styles.headerText}>Light</Text>
-              <Icon name='sun' size={86} style={styles.image} color={colors.complementaryDark} />
             </TouchableOpacity>
           </View>
         </View>
