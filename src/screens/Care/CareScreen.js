@@ -56,6 +56,7 @@ const CareScreen = () => {
           <Text style={styles.titleProfile}>Profile</Text>
           <View style={styles.divider}></View>
         </View>
+
         <View style={styles.generalContainer}>
           {/* <View style={styles.dataUserContainerOne}>
             <Text style={styles.dataUserText}>Time that shoudn't be spent on console per day</Text>

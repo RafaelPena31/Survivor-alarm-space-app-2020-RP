@@ -8,10 +8,9 @@ import LinearGradient from 'react-native-linear-gradient'
 
 import styles from './StatusStyle'
 import colors from '../../Styles/_colors'
-import { parse } from '@babel/core'
 
 // eslint-disable-next-line react/prop-types
-const StatusScreen = () => {
+const StatusScreen = ({ sets }) => {
   const [name, setName] = useState('')
   const [weight, setWeight] = useState(0)
   const [age, setAge] = useState(0)
@@ -32,12 +31,12 @@ const StatusScreen = () => {
 
   /* Progress state Start */
 
-  const [healthBar, setHealthBar] = useState(0)
-  const [sleepBar, setSleepBar] = useState(0)
-  const [foodBar, setFoodBar] = useState(0)
-  const [waterBar, setWaterBar] = useState(0)
-  const [lightBar, setLightBar] = useState(0)
-  const [melatoninBar, setMelatoninBar] = useState(0)
+  //const [healthBar, setHealthBar] = useState(0)
+  // const [sleepBar, setSleepBar] = useState(0)
+  // const [foodBar, setFoodBar] = useState(0)
+  // const [waterBar, setWaterBar] = useState(0)
+  // const [lightBar, setLightBar] = useState(0)
+  // const [melatoninBar, setMelatoninBar] = useState(0)
 
   /* Progress state End */
 
@@ -57,6 +56,13 @@ const StatusScreen = () => {
         setStudies(await AsyncStorage.getItem('studies'))
         setMaintenance(await AsyncStorage.getItem('maintenance'))
         setHardWork(await AsyncStorage.getItem('hardwork'))
+
+        sets.setHealthBar((await AsyncStorage.getItem('healthBar')) || 0)
+        sets.setSleepBar((await AsyncStorage.getItem('sleepBar')) || 0)
+        sets.setFoodBar((await AsyncStorage.getItem('foodBar')) || 0)
+        sets.setWaterBar((await AsyncStorage.getItem('waterBar')) || 0)
+        sets.setLightBar((await AsyncStorage.getItem('lightBar')) || 0)
+        sets.setMelatoninBar((await AsyncStorage.getItem('melatoninBar')) || 0)
       } catch (e) {
         alert(e)
       }
@@ -164,28 +170,28 @@ const StatusScreen = () => {
           </View>
           <View style={styles.statusBarContainer}>
             <View style={styles.progressBarContainer}>
-              <Progress.Bar progress={healthBar} width={350} height={20} borderRadius={50} color='green' />
-              <Text style={styles.labelProgessBar}>Health - {health}%</Text>
+              <Progress.Bar progress={sets.healthBar} width={350} height={20} borderRadius={50} color='green' />
+              <Text style={styles.labelProgessBar}>Health - {sets.healthBar}%</Text>
             </View>
             <View style={styles.progressBarContainer}>
-              <Progress.Bar progress={foodBar} width={350} height={20} borderRadius={50} color='orange' />
-              <Text style={styles.labelProgessBar}>Food - {food}%</Text>
+              <Progress.Bar progress={sets.foodBar} width={350} height={20} borderRadius={50} color='orange' />
+              <Text style={styles.labelProgessBar}>Food - {sets.foodBar}%</Text>
             </View>
             <View style={styles.progressBarContainer}>
-              <Progress.Bar progress={waterBar} width={350} height={20} borderRadius={50} color='lightblue' />
-              <Text style={styles.labelProgessBar}>Water - {water}%</Text>
+              <Progress.Bar progress={sets.waterBar} width={350} height={20} borderRadius={50} color='lightblue' />
+              <Text style={styles.labelProgessBar}>Water - {sets.waterBar}%</Text>
             </View>
             <View style={styles.progressBarContainer}>
-              <Progress.Bar progress={sleepBar} width={350} height={20} borderRadius={50} color='darkviolet' />
-              <Text style={styles.labelProgessBar}>Sleep - {sleepPercentage}%</Text>
+              <Progress.Bar progress={sets.sleepBar} width={350} height={20} borderRadius={50} color='darkviolet' />
+              <Text style={styles.labelProgessBar}>Sleep - {sets.sleepBar}%</Text>
             </View>
             <View style={styles.progressBarContainer}>
-              <Progress.Bar progress={melatoninBar} width={350} height={20} borderRadius={50} color='white' />
-              <Text style={styles.labelProgessBar}>Melatonin - {melatoninBar}%</Text>
+              <Progress.Bar progress={sets.melatoninBar} width={350} height={20} borderRadius={50} color='white' />
+              <Text style={styles.labelProgessBar}>Melatonin - {sets.melatoninBar}%</Text>
             </View>
             <View style={styles.progressBarContainer}>
-              <Progress.Bar progress={lightBar} width={350} height={20} borderRadius={50} color='yellow' />
-              <Text style={styles.labelProgessBar}>Good contact with light - {lightBar}%</Text>
+              <Progress.Bar progress={sets.lightBar} width={350} height={20} borderRadius={50} color='yellow' />
+              <Text style={styles.labelProgessBar}>Good contact with light - {sets.lightBar}%</Text>
             </View>
           </View>
 
@@ -216,3 +222,5 @@ const StatusScreen = () => {
     </SafeAreaView>
   )
 }
+
+export default StatusScreen

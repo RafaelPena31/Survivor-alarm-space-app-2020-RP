@@ -17,9 +17,9 @@ const FormOneScreen = () => {
   const navigation = useNavigation()
 
   // temp
-  useEffect(() => {
+  /* useEffect(() => {
     navigation.navigate('FormTwo')
-  }, [])
+  }, []) */
   // temp
 
   const [weight, setWeight] = useState(0)

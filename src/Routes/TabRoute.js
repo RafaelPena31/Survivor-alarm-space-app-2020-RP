@@ -1,13 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Icon from 'react-native-vector-icons/Fontisto'
 import colors from '../Styles/_colors'
 import StatusScreen from '../screens/Status/StatusScreen'
 import CareScreen from '../screens/Care/CareScreen'
+import { AsyncStorage } from 'react-native'
 
 const { Navigator, Screen } = createBottomTabNavigator()
 
 function TabRoute() {
+  const [healthBar, setHealthBar] = useState(0)
+  const [sleepBar, setSleepBar] = useState(0)
+  const [foodBar, setFoodBar] = useState(0)
+  const [waterBar, setWaterBar] = useState(0)
+  const [lightBar, setLightBar] = useState(0)
+  const [melatoninBar, setMelatoninBar] = useState(0)
+
+  useEffect(() => {
+    ;(async () => {
+      try {
+        setHealthBar((await AsyncStorage.getItem('healthBar')) || 0)
+        setSleepBar((await AsyncStorage.getItem('sleepBar')) || 0)
+        setFoodBar((await AsyncStorage.getItem('foodBar')) || 0)
+        setWaterBar((await AsyncStorage.getItem('waterBar')) || 0)
+        setLightBar((await AsyncStorage.getItem('lightBar')) || 0)
+        setMelatoninBar((await AsyncStorage.getItem('melatoninBar')) || 0)
+      } catch (e) {
+        alert(e)
+      }
+    })()
+  }, [])
+
   return (
     <Navigator
       tabBarOptions={{
@@ -38,7 +61,24 @@ function TabRoute() {
       }}>
       <Screen
         name='Status'
-        component={StatusScreen}
+        children={() => (
+          <StatusScreen
+            sets={{
+              healthBar,
+              setHealthBar,
+              sleepBar,
+              setSleepBar,
+              foodBar,
+              setFoodBar,
+              waterBar,
+              setWaterBar,
+              lightBar,
+              setLightBar,
+              melatoninBar,
+              setMelatoninBar
+            }}
+          />
+        )}
         options={{
           tabBarLabel: 'Status',
           // eslint-disable-next-line react/display-name
