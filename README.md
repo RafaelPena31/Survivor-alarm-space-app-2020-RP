@@ -1,7 +1,7 @@
 # 💻 SurvivorAlarm - Survivor Alarm Team 
 ## NASA SpaceApp Hackathon
 
-**SurvivorAlarm - Survivor Alarm Team ** é uma plataforma que auxilia o usuário na gestão da sua saúde a partir de uma interface gameficada. Durante o seu dia o usuário insere
+**SurvivorAlarm - Survivor Alarm Team** é uma plataforma que auxilia o usuário na gestão da sua saúde a partir de uma interface gameficada. Durante o seu dia o usuário insere
 dados como momentos em que comeu, tomou água, se exercitou e, a partir desses dados, nosso algoritmo vai avaliando o metabolismo do usuário e monitorando diversas necessidade 
 para a sobrevivência.
 
