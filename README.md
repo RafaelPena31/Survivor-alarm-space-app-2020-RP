@@ -1,15 +1,13 @@
 # 💻 SurvivorAlarm - Survivor Alarm Team 
 ## NASA SpaceApp Hackathon
 
-**SurvivorAlarm - Survivor Alarm Team** é uma plataforma que auxilia o usuário na gestão da sua saúde a partir de uma interface gameficada. Durante o seu dia o usuário insere
-dados como momentos em que comeu, tomou água, se exercitou e, a partir desses dados, nosso algoritmo vai avaliando o metabolismo do usuário e monitorando diversas necessidade 
-para a sobrevivência.
+**SurvivorAlarm - Survivor Alarm Team** is a platform that assists the user in managing their health from a gamified interface. During the day, the user enters data such as moments when he ate, drank water, exercised and, based on this data, our algorithm assesses the user's metabolism and monitors various needs for survival.
 
-A equipe **Survivor Alarm Team** desenvolveu o projeto durante o NASA SpaceApp Hackathon, organizado pela NASA.
+The **Survivor Alarm Team** team developed the project during the NASA SpaceApp Hackathon, organized by NASA.
 
-O projeto utiliza **React Native** framework.
+The project uses **React Native** framework.
 
-## 📋 Membros da equipe:
+## 📋 Team members:
 
  1. Rafael Augusto Pena - Fullstack Mobile Developer
  2. Lucas Coelho - Frontend Mobile Developer 
